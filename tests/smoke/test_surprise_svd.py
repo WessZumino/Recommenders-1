@@ -6,10 +6,11 @@ import papermill as pm
 from tests.notebooks_common import OUTPUT_NOTEBOOK, KERNEL_NAME
 
 
-TOL = 0.05
+TOL = 0.1
 
 
 @pytest.mark.smoke
+@pytest.mark.bare
 def test_surprise_svd_smoke(notebooks):
     notebook_path = notebooks["surprise_svd_deep_dive"]
     pm.execute_notebook(notebook_path, OUTPUT_NOTEBOOK, kernel_name=KERNEL_NAME)

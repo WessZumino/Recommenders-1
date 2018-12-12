@@ -8,10 +8,11 @@ import papermill as pm
 from tests.notebooks_common import OUTPUT_NOTEBOOK, KERNEL_NAME
 
 
-TOL = 0.5
+TOL = 0.1
 
 
 @pytest.mark.smoke
+@pytest.mark.bare
 def test_sar_single_node_smoke(notebooks):
     notebook_path = notebooks["sar_single_node"]
     pm.execute_notebook(notebook_path, OUTPUT_NOTEBOOK, kernel_name=KERNEL_NAME)
